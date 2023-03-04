@@ -10,6 +10,10 @@
 </head>
 <body>
     @include('inc.header')
+    
+    @if(Request::is('/'))
+        @include('inc.if')
+    @endif
 
     <div class='container mt-5 mb-5'>
         <div class='row'>
