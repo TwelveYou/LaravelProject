@@ -11,8 +11,20 @@
 <body>
     @include('inc.header')
 
-    @yield('content')
+    <div class='container mt-5 mb-5'>
+        <div class='row'>
+            <div class='col-8'>
+                @yield('content')
+            </div>
+            <div class='col-4'>
+                @include('inc/aside')
+            </div>
+        </div>
+    </div>
 
-    @include('inc/aside')
+
+
+
+    @include('inc.footer')
 </body>
 </html>
