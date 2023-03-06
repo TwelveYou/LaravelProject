@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">   
 </head>
 <body>
-    <div class='no-footer' style='min-height: 100vh;'>        
+    <div class='no-footer' style='min-height: calc(100vh - 145px);'>        
         @include('inc.header')
         
         @if(Request::is('/'))
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div style='margin-top: -145px; max-height: 145px;'>        
+    <div class='footer' style='height: 145px;'>        
         @include('inc.footer')
     </div>
 </body>
