@@ -25,9 +25,9 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');;
 
-Route::post('/contact/submit', function () {
-    return dd(Request::all());
-})->name('contact-form');  // Именное отслеживание URL-адресов
+Route::post('/contact/submit','App\Http\Controllers\ContactController@submit')->name('contact-form');  // Именное отслеживание URL-адресов
+
+
 
 Route::get('/laravel', function () {
     return view('welcome');
