@@ -4,16 +4,16 @@
       <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Главная</a>
+            <a class="nav-link active" aria-current="page" href="{{route('home')}}">Главная</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">Контакты</a>
+            <a class="nav-link" href="{{route('contact')}}">Контакты</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/about">О нас</a>
+            <a class="nav-link" href="{{route('about')}}">О нас</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/laravel">Laravel</a>
+            <a class="nav-link" href="{{route('laravel')}}">Laravel</a>
           </li>
         </ul>
       </div>
