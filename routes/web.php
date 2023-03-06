@@ -25,8 +25,10 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');;
 
-Route::post('/contact/submit','App\Http\Controllers\ContactController@submit')->name('contact-form');  // Именное отслеживание URL-адресов
-
+// Route::post('/contact/submit','app\Http\Controllers\ContactController@submit')
+// ->name('contact-form');  // Именное отслеживание URL-адресов
+use App\Http\Controllers\ContactController;
+Route::post('/contact/submit', [ ContactController::class, 'submit_with_request' ])->name('contact-form');
 
 
 Route::get('/laravel', function () {
