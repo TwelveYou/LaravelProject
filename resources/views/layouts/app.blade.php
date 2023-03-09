@@ -16,6 +16,8 @@
             @include('inc.if')
         @endif
 
+        @include('inc.messages')
+
         <div class='container mt-5 mb-5'>
             <div class='row'>
                 <div class='col-8'>
