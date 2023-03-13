@@ -27,4 +27,21 @@ class ContactController extends Controller{
         return redirect()->route('home')->with('success', 'Сообщение успешно ушло');
     }
 
+    public function allData(){
+        // $contact = new Contact(); // можно не указывать "()"
+        // dd($contact->all()); // есть в классе "Model"
+        
+        // $cont = Contact::all();
+        // dd($cont);
+
+        // dd(Contact::all());
+
+        // return view('messages', ['data' => 'hello']);
+
+        // $contact->orderBy('id', 'asc')-> skip(1)->take(1)->get()
+        return view('messages', ['data' => Contact::all()]);
+        // return view('messages', ['data' => Contact::all()->where('subject', '=', 'Hello')->get()]);
+
+    }
+
 }
