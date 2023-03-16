@@ -13,5 +13,6 @@
             <p>{{$data->message}} </p>
             <small> {{$data->created_at}} </small> <br>
             <a href="{{route('contact-update', $data->id)}}"> <button class='btn btn-lg btn-primary mt2'> Редактировать </button> </a>
+            <a href="{{route('contact-delete', $data->id)}}"> <button class='btn btn-lg btn-danger mt2'> Удалить </button> </a>
         </div>
 @endsection

@@ -54,9 +54,9 @@ class ContactController extends Controller{
     }
 
     public function updateMessageSubmit($id, ContactRequest $req){
-        $contact = Contact::find($id);
-        // $contacts = new Contact();
-        // $contact = $contacts->find($id);
+        // $contact = Contact::find($id);
+        $contacts = new Contact();
+        $contact = $contacts->find($id);
         
         $contact->name = $req->input('name');
         $contact->email = $req->input('email');
@@ -66,5 +66,10 @@ class ContactController extends Controller{
         $contact->save(); 
 
         return redirect()->route('contact-data-one', $id)->with('success', 'Сообщение обновлено');
+    }
+
+    public function deleteMessage($id){
+        Contact::find($id)->delete();
+        return redirect()->route('contact-data')->with('success', 'Сообщение было удалено');
     }
 }

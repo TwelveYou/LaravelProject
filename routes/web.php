@@ -42,6 +42,12 @@ Route::post('/contact/all/{id}/update',
 // )->name('contact-update-submit');
 )->name('contact-update-submit');
 
+Route::get('/contact/all/{id}/delete', 
+    [ContactController::class, 'deleteMessage']
+)->name('contact-delete');
+
+
 Route::get('/laravel', function () {
     return view('welcome-laravel');
 })->name('laravel');
+
