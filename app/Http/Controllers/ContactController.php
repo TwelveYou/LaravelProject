@@ -44,4 +44,8 @@ class ContactController extends Controller{
 
     }
 
+    public function showOneMessage($id){
+        return view('oneMessage', ['data' => Contact::find($id)]);
+    }
+
 }
