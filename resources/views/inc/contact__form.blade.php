@@ -1,4 +1,4 @@
-<form action={{ route('contact-form') }} method="POST">
+<form action={{ route('contact-form') }} method="POST"> 
     @csrf
     <div class="form-group">
         <label for="name">Введите Имя</label>

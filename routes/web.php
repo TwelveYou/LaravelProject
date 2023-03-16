@@ -29,6 +29,7 @@ Route::get('/contact', function () {
 // ->name('contact-form');  // Именное отслеживание URL-адресов
 use App\Http\Controllers\ContactController;
 Route::post('/contact/submit', [ ContactController::class, 'valid' ])->name('contact-form');
+
 Route::get('/contact/all', [ContactController::class, 'allData'])->name('contact-data');
 Route::get('/contact/all/{id}', 
     [ContactController::class, 'showOneMessage']
@@ -38,8 +39,9 @@ Route::get('/contact/all/{id}/update',
 )->name('contact-update');
 Route::post('/contact/all/{id}/update', 
     [ContactController::class, 'updateMessageSubmit']
+// )->name('contact-update-submit');
 )->name('contact-update-submit');
 
 Route::get('/laravel', function () {
-    return view('welcome');
+    return view('welcome-laravel');
 })->name('laravel');

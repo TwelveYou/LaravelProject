@@ -6,7 +6,7 @@
 
 @section('content')
     <h1> Обновление записи </h1>    
-    <form action={{ route('contact-update-submit',$data->id) }} method="POST">
+    <form action={{ route('contact-update',$data->id) }} method="POST"> 
         @csrf
         <div class="form-group">
             <label for="name">Имя</label>
