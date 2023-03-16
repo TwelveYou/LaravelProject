@@ -15,7 +15,7 @@ class ContactController extends Controller{
         dd($req->input('subject'));
     }
 
-    public function valid(ContactRequest $req){
+    public function updateMessageSubmit(ContactRequest $req){
         $contact = new Contact(); // создаем объект класса модели Contact
         $contact->name = $req->input('name');
         $contact->email = $req->input('email');
@@ -45,7 +45,29 @@ class ContactController extends Controller{
     }
 
     public function showOneMessage($id){
-        return view('oneMessage', ['data' => Contact::find($id)]);
+        return view('one-message', ['data' => Contact::find($id)]);
+    }
+
+    public function updateMessage($id){
+        $contact = new Contact();
+        return view('update-message', ['data' => $contact->find($id)]);
+    }
+
+    public function valid($id, ContactRequest $req){
+        //$contact = Contact::find($id);
+        $contacts = new Contact();
+        $contact = $contacts->find($id);
+
+
+        
+        $contact->name = $req->input('name');
+        $contact->email = $req->input('email');
+        $contact->subject = $req->input('subject');
+        $contact->message = $req->input('message');
+
+        $contact->save();
+
+        return redirect()->route('contact-data-one', $id)->with('success', 'Сообщение обновленоЯ');
     }
 
 }

@@ -12,7 +12,7 @@
             <h4> {{$data->subject}} </h4>            
             <p>{{$data->message}} </p>
             <small> {{$data->created_at}} </small> <br>
-            <a href="{{route('contact-data-one', $data->id)}}"> <button class='btn btn-lg btn-warning mt2'> Редактировать </button> </a>
+            <a href="{{route('contact-update', $data->id)}}"> <button class='btn btn-lg btn-primary mt2'> Редактировать </button> </a>
         </div>
 
     
